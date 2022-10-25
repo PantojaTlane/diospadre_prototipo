@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+:root{
+    --anaranjado: #ff6a00;
+    --azulMarinoA: #0852a4;
+    --azulCielo: #06b1ec;
+    --amarillo: #fffd09;
+    --azulMarinoB: #17234d;
+    --gris: #c1c1c1;
+}

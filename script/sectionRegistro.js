@@ -1,0 +1,9 @@
+/*btnRegistrarse.addEventListener('click',()=>{
+    if(!sectionForm.classList.contains('hide-section-form')){
+        sectionForm.classList.add('hide-section-form');
+    }
+    if(sectionTip.classList.contains('hide-sectionTip')){
+        sectionTip.classList.remove('hide-sectionTip');
+    }
+    sectionRegistro.classList.toggle('hide-section-registro');
+});*/

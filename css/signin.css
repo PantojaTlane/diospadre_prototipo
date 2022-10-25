@@ -1,0 +1,52 @@
+.hide-section-form{
+    transform: translateX(-1000%);
+}
+#sectionForm{
+    position: absolute;
+    top: 7rem;
+    right: 1rem;
+    z-index: 1;
+    width: 300px;
+    background: white;
+    color: #383838;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    transition: all ease-in 0.3s !important;
+}
+#sectionForm h4{
+    display: inline-block;
+}
+#sectionForm > i{
+    margin-left: 12rem;
+    color: var(--anaranjado);
+}
+#signinForm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+#signinForm input{
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    padding: 0.3rem;
+    outline: none !important;
+    border: 1px solid #dfdfdf;
+    color: #383838;
+    font-size: 0.8rem;
+}
+#signinForm button{
+    width: 80px;
+    margin: auto;
+    font-size: 0.8rem;
+    padding: 0.4rem;
+    border: 1px solid var(--anaranjado);
+    border-radius: 0.5rem;
+    background-color: var(--anaranjado);
+    color: white;
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+}
+#signinForm button:hover{
+    background-color: white;
+    color: var(--anaranjado);
+}
