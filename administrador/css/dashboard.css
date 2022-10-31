@@ -1,0 +1,608 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+.main-content{
+    width: 80%;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.hide-content{
+    display: none !important;
+}
+#crear-section{
+    position: relative;
+    padding: 1rem;
+    padding-top: 7rem;
+}
+#crear-section h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#updateEstado{
+    position: absolute;
+    top: 70%;
+    right: 3rem;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--azulMarinoA);
+    color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+}
+#crear-section button{
+    background-color: var(--azulMarinoA);
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 0.3rem;
+    cursor: pointer;
+}
+#header{
+    width: 80%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    background-color: white;
+}
+#logoAdmi{ 
+    width: 20%;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    height: 100vh;
+    position: fixed;
+}
+#logoAdmi > div{
+    padding: 1rem;
+    width: 100%;
+    background-color: var(--azulMarinoA);
+}
+#logoAdmi > ul{
+    list-style: none;
+    color: var(--azulMarinoA);
+    padding: 0;
+    width: 100%;
+    margin-top: 2rem;
+}
+#logoAdmi > ul > li{
+    width: 100%;
+    text-align: start;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    opacity: 0.5;
+    transition: all ease-in-out 0.3s;
+}
+#logoAdmi > ul > li:hover{
+    opacity: 1;
+    cursor: pointer;
+}
+#logoAdmi > ul > li > i{
+    margin-right: 0.5rem;
+}
+#user{
+    padding: 1rem;
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#user div{
+    display: flex;
+    align-items: center;
+    color: var(--azulMarinoA);
+    font-weight: 900;
+}
+#user div span{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: var(--azulMarinoA);
+    color: white;
+    padding: 0.7rem 0.8rem;
+    border-radius: 50%;
+}
+.fa-right-from-bracket{
+    font-size: 1.2rem;
+}
+#bienAdmin{
+    background-color: rgb(231, 231, 231);
+    padding: 0.5rem 1rem;
+    width: 220px;
+    text-align: center;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 110px);
+    transform: translateY(-100%);
+    color: var(--azulMarinoB);
+}
+.showBienvenidaAdmin{
+    animation-name: showBien;
+    animation-duration: 0.3s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+    animation-play-state: running;
+}
+
+
+@keyframes  showBien{
+    0%{ 
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(70%);
+        opacity: 1;
+    }
+}
+
+#boletos-creados{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+#notifyAdd{
+    color: white;
+    background-color: rgb(157, 255, 157);
+    position: absolute;
+    padding: 0.4rem;
+    top: 4%;
+    z-index: 4;
+    border-radius: 0.4rem;
+    transform: translateY(-300%);
+}
+#notifyEdited{
+    color: white;
+    background-color: rgb(72, 75, 255);
+    position: absolute;
+    padding: 0.4rem;
+    top: 4%;
+    z-index: 4;
+    border-radius: 0.4rem;
+    transform: translateY(-300%);
+}
+#notifyDeleted{
+    color: white;
+    background-color: rgb(247, 72, 110);
+    position: absolute;
+    padding: 0.4rem;
+    top: 4%;
+    z-index: 4;
+    border-radius: 0.4rem;
+    transform: translateY(-300%);
+}
+.showBoletoAdd{
+    animation-name: showAddedBoleto;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode:forwards;
+    animation-play-state: running;
+}
+@keyframes showAddedBoleto {
+    0%{
+        opacity: 0;
+        transform: translateY(-300%);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+#sinCrear{
+    font-size: 1.2rem;
+    color: #9e9e9e;
+    font-weight: 500;
+}
+.boleto-creado{
+    width: 400px;
+    height: 200px;
+    margin: 1rem;
+    position: relative;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+.boleto-creado img{
+    width: 100%;
+    height: 96%;
+    margin-top: 1rem;
+}
+#detailsBoleto{
+    position: absolute;
+    width: 85%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    color: white;
+}
+#detailsBoleto h1{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+#detailsBoleto p{
+    text-align: right;
+    font-size: 0.8rem;
+}
+#actionsBoleto{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0rem 1rem 1rem 0;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+#actionsBoleto a:first-child{
+    color: rgb(194, 56, 56);
+    padding: 0.3rem;
+    background-color: white;
+    border-radius: 0.2rem;
+}
+#actionsBoleto a:last-child{
+    color: rgb(67, 88, 206);
+    padding: 0.3rem;
+    background-color: white;
+    border-radius: 0.2rem;
+}
+#actionsBoleto a:first-child{
+    margin-right: 1rem;
+}
+#estadoBoleto{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transform: translateY(100%);
+    justify-content: space-between;
+    padding: 0.5rem;
+    color: white;
+}
+#estadoBoleto b{
+    margin-right: 0.5rem;
+}
+.porvender{
+    background-color: rgb(223, 132, 132);
+}
+.poragotarse{
+    background-color: rgb(105, 207, 130);
+}
+.vendidos{
+    background-color: rgb(65, 65, 65);
+}
+
+
+
+/*Registro de entradas*/
+#section-crear{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff98;
+}
+.hideSectionCrear{
+    display: none !important;
+}
+#formCrearBoleto{
+    width: 600px;
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+    background-color: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    position: relative;
+}
+#closeCrear{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background-color: #b31b1b;
+    color: white;
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.4rem 0.6rem;
+    font-size: 1rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all ease-in-out 0.3s;
+    text-decoration: none;
+}
+#closeCrear:hover{
+    background-color: #b33030;
+}
+#formCrearBoleto #encabezado{
+    background-color: var(--azulMarinoA);
+    padding: 1rem;
+    text-align: center;
+    color: white;
+}
+#data-boleto{
+    padding: 1rem 3rem;
+    display: flex;
+    flex-direction: row;
+}
+#data-boleto h1{
+    color: var(--azulMarinoA);
+    margin-bottom: 1rem;
+}
+#datos-generales{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    color: #383838;
+}
+#datos-generales label{
+    margin-bottom: 0.5rem;
+}
+#datos-generales input{
+    margin-bottom: 0.5rem;
+    border: none;
+    outline: none;
+    border: 1px solid var(--azulMarinoA);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+#imagen{
+    width: 50%;
+}
+
+
+
+#imagen{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 1rem 1rem 1rem;
+}
+#btnRegistrar{
+    background-color: var(--azulCielo);
+    padding: 0.5rem;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    border-radius: 0.4rem;
+}
+.hideBtnRegistrar{
+    display: none !important;
+}
+#imagenInput::-webkit-file-upload-button{
+    background-color: var(--anaranjado);
+    padding: 0.5rem;
+    width:220px;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+}
+#containerFile{
+    cursor: pointer;
+    width: 220px;
+    overflow: hidden;
+    margin: auto;
+    border-radius: 0.4rem;
+    text-align: center;
+    margin-top: 0.1rem;
+}
+#nameFile{
+    margin-top: 4rem;
+    text-align: center;
+    font-size: .8rem;
+    background-color: white;
+    color: #ff6a00;
+    border: 1px solid #ff6a00;
+    padding: 0.6rem 0.3rem;
+    border-radius: 0.4rem;
+}
+.hideNameFile{
+    display: none !important;
+}
+
+
+
+
+
+
+/*ESTILOS PARA CONTROL DE INGRESO*/
+#updateEstadoControl{
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--azulMarinoA);
+    color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+}
+#buscar-section{
+    position: relative;
+    padding: 1rem;
+    padding-top: 7rem;
+}
+#buscar-section h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#container-buscador{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f1f1f1;
+    transition: all ease-in-out 0.3s;
+}
+#container-buscador i{
+    color: #9e9e9e;
+}
+#container-buscador input{
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-left: 0.4rem;
+    font-size: 0.8rem;
+    color: #9e9e9e;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+#container-buscador:hover{
+    border: 1px solid var(--azulMarinoA);
+}
+#container-tabla{
+    text-align: center;
+}
+#container-tabla p{
+    padding: 0.4rem;
+    background-color: #f5f5f5;
+    display: inline-block;
+    border-radius: 0.5rem;
+    color: #9e9e9e;
+}
+#table-compras{
+    width:100%;
+}
+#table-compras tr td{
+    padding: 0.3rem;
+    text-align: center;
+}
+#table-compras thead tr td{
+    color: var(--azulMarinoA);
+    padding-bottom: 1.5rem;
+    font-weight: 900;
+}
+#table-compras tbody tr td{
+    color: #9e9e9e;
+}
+#estadoDiv{
+    width: 15px;
+    height: 15px;
+    margin: auto;
+    border-radius: 50%;
+}
+.sinLlegar{
+    background-color: #ff7777;
+}
+.llego{
+    background-color: #3de977;
+}
+/*ESTILOS PARA CONTROL DE INGRESO*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*ESTILOS PARA TRANSACCIONES*/
+#updateEstadoTrans{
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--azulMarinoA);
+    color: white;
+    font-size: 1rem;
+    border-radius: 50%;
+}
+#buscar-section-trans{
+    position: relative;
+    padding: 1rem;
+    padding-top: 7rem;
+}
+#buscar-section-trans h1{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+#container-buscador-trans{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #f1f1f1;
+    transition: all ease-in-out 0.3s;
+}
+#container-buscador-trans i{
+    color: #9e9e9e;
+}
+#container-buscador-trans input{
+    width: 100%;
+    border: none;
+    outline: none;
+    margin-left: 0.4rem;
+    font-size: 0.8rem;
+    color: #9e9e9e;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display: none;
+}
+#container-buscador-trans:hover{
+    border: 1px solid var(--azulMarinoA);
+}
+#container-tabla-trans{
+    text-align: center;
+}
+#container-tabla-trans p{
+    padding: 0.4rem;
+    background-color: #f5f5f5;
+    display: inline-block;
+    border-radius: 0.5rem;
+    color: #9e9e9e;
+}
+#table-compras-trans{
+    width:100%;
+}
+#table-compras-trans tr td{
+    padding: 0.3rem;
+    text-align: center;
+}
+#table-compras-trans thead tr td{
+    color: var(--azulMarinoA);
+    padding-bottom: 1.5rem;
+    font-weight: 900;
+}
+#table-compras-trans tbody tr td{
+    color: #9e9e9e;
+    font-size: 0.8rem;
+}
+/*ESTILOS PARA TRANSACCIONES*/

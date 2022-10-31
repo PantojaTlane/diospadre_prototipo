@@ -41,7 +41,7 @@ $nombreCliente = $cliente['nombre'];//Obtenemos el nombre del cliente, para envi
 
 
 //Query para insertar un registro de compra en la base de datos
-$queryAgregarCompra = "INSERT INTO compra(tokenCompra,valor,tipoMoneda,estado,ciudad,codigoPais,codigoPostal,idCliente,fechaReservada) VALUES('$tokenCompra',$valor,'$tipoMoneda','$estado','$ciudad','$codigoPais','$codigoPostal',$idCliente,'$fechaReservada')";
+$queryAgregarCompra = "INSERT INTO compra(tokenCompra,valor,tipoMoneda,estado,ciudad,codigoPais,codigoPostal,idCliente,fechaReservada,estadoLlegada) VALUES('$tokenCompra',$valor,'$tipoMoneda','$estado','$ciudad','$codigoPais','$codigoPostal',$idCliente,'$fechaReservada','SinLlegar')";
 $resultAgregarCompra = mysqli_query($conn,$queryAgregarCompra);
 
 if(!$resultAgregarCompra){//Si no se llevo a cabo la insercion del registro de compra....
@@ -59,7 +59,7 @@ if(!$resultAgregarCompra){//Si no se llevo a cabo la insercion del registro de c
         $cantidadB = $idBoleto['cantidadBoletos'];
         
 
-        $queryAgregarBoletoCompra = "INSERT INTO compraboleto(idCompra,idBoleto) VALUES($idCompra,$idB)";
+        $queryAgregarBoletoCompra = "INSERT INTO compraboleto(idCompra,idBoleto,cantidadComprada) VALUES($idCompra,$idB,$cantidadB)";
         $resultAgregarBoletoCompra = mysqli_query($conn,$queryAgregarBoletoCompra);
         if($resultAgregarBoletoCompra){
             $queryActualizarCantidadBoleto = "UPDATE boleto set cantidadBoletosDisponibles = cantidadBoletosDisponibles - $cantidadB WHERE idBoleto = $idB";

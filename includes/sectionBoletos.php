@@ -15,7 +15,8 @@
                         <a href="bienvenida.php?id_boleto=<?= $boleto_item['idBoleto'] ?>&<?= $bienvenida ?>" id="detalles-boleto">Detalles</a><!--Aqui es para redirigir a un archivo php y capture esos datos. Cuando renderize este boleto, debo pasarlo como por ejemplo archivo.php?id para que reciba ese id y pueda pintarlo en el modal de description del boleto-->
                         <span id="costo-boleto">$<?= $boleto_item['precio'] ?> MXN</span>
                     </div>
-                    <img src="./img/boleto.png" alt="">
+                    <?php $boleto_item['imgUrl'][0] = " "; ?>
+                    <img src="<?= $boleto_item['imgUrl'] ?>" alt="">
                 </div>
             <?php endif; ?>
         <?php endwhile; ?>
