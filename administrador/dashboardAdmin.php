@@ -131,7 +131,7 @@
             
 
             <?php
-                $getBoletosAdmin = "SELECT * FROM boleto";
+                $getBoletosAdmin = "SELECT * FROM boleto WHERE estado != 'eliminado'";
                 $resultGetBoletosAdmin = mysqli_query($conn,$getBoletosAdmin);
             ?>
             <?php if(mysqli_num_rows($resultGetBoletosAdmin)==0): ?>

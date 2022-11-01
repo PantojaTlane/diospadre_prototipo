@@ -5,7 +5,7 @@ session_start();
 
 if(isset($_GET['id'])){
     $idBoletoEliminar = $_GET['id'];
-    $queryDelete = "DELETE FROM boleto where idBoleto = $idBoletoEliminar";
+    $queryDelete = "UPDATE boleto set estado = 'eliminado' where idBoleto = $idBoletoEliminar";
     $resultDelete = mysqli_query($conn,$queryDelete);
 
     if($resultDelete){

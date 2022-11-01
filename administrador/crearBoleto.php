@@ -18,7 +18,7 @@ if(isset($_POST['nombre']) && isset($_POST['costo']) && isset($_POST['cantidad']
     
     move_uploaded_file($ruta_temporal,$ruta_a_subir);
 
-    $querySaveBoleto = "INSERT INTO boleto(nombre,detalles,precio,cantidadBoletosDisponibles,numBoletosEmitidos,imgUrl,name,idAdministrador) VALUES('$nombre','$descripcion',$costo,$cantidad,$cantidad,'$ruta_a_subir','$name_image',1)";
+    $querySaveBoleto = "INSERT INTO boleto(nombre,detalles,precio,cantidadBoletosDisponibles,numBoletosEmitidos,imgUrl,name,estado,idAdministrador) VALUES('$nombre','$descripcion',$costo,$cantidad,$cantidad,'$ruta_a_subir','$name_image','noeliminado',1)";
     $result = mysqli_query($conn,$querySaveBoleto);
 
     if($result){

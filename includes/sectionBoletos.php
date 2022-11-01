@@ -1,6 +1,6 @@
 <?php
 
-    $queryGetBoletos = "SELECT * FROM boleto";
+    $queryGetBoletos = "SELECT * FROM boleto WHERE estado != 'eliminado'";
     $resultGetBoletos = mysqli_query($conn,$queryGetBoletos);
 
 ?>
