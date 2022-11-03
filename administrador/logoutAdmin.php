@@ -3,5 +3,5 @@
 session_start();
 session_unset();
 session_destroy();
-header("Location: /Sistema2/administrador/index.php");
+header("Location: /administrador/index.php");
 ?>

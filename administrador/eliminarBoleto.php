@@ -10,10 +10,10 @@ if(isset($_GET['id'])){
 
     if($resultDelete){
         $_SESSION['deleted'] = "Boleto eliminado correctamente";
-        header("Location: /Sistema2/administrador/dashboardAdmin.php");
+        header("Location: /administrador/dashboardAdmin.php");
     }
 }else{
-    header("Location: /Sistema2/administrador/dashboardAdmin.php");
+    header("Location: /administrador/dashboardAdmin.php");
 }
 
 ?>

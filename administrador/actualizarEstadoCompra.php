@@ -9,10 +9,10 @@ if(isset($_GET['idCompra'])){
     $resultQueryActualizar = mysqli_query($conn,$queryActualizarEstado);
 
     if($resultQueryActualizar){
-        header("Location: /Sistema2/administrador/dashboardAdmin.php");
+        header("Location: /administrador/dashboardAdmin.php");
     }
 }else{
-    header("Location: /Sistema2/administrador/dashboardAdmin.php");
+    header("Location: /administrador/dashboardAdmin.php");
 }
 
 ?>

@@ -17,7 +17,7 @@
     }
 
     if($user==null){
-        header("Location: /Sistema2/administrador/");
+        header("Location: /administrador/");
     }
     //$_SESSION["started"] = "true";
 
@@ -50,7 +50,7 @@
         <section id="section-crear">
             <form action="editarBoleto.php?id=<?= $infoBol["idBoleto"] ?>" method="post" enctype="multipart/form-data" id="formCrearBoleto">
                 <div id="encabezado"><h1>Registro de entradas</h1></div>
-                <a href="/Sistema2/administrador/dashboardAdmin.php" id="closeCrear">x</a>
+                <a href="/administrador/dashboardAdmin.php" id="closeCrear">x</a>
                 <section id="data-boleto">
                     <div id="datos-generales">
                         <h1>Datos Generales</h1>
@@ -114,7 +114,7 @@
         <div id="crear-section">
             <h1>Entradas</h1>
             <button id="crearEntradaBtn">Crear entrada</button>
-            <a href="/Sistema2/administrador/dashboardAdmin.php" id="updateEstado"><i class="fa-solid fa-rotate"></i></a>
+            <a href="/administrador/dashboardAdmin.php" id="updateEstado"><i class="fa-solid fa-rotate"></i></a>
         </div>
         <section id="boletos-creados">
 
@@ -149,7 +149,7 @@
                     <img src="<?= $boleto['imgUrl'] ?>" alt="boleto">
                     <div id="actionsBoleto">
                         <a href="eliminarBoleto.php?id=<?= $boleto['idBoleto'] ?>"><i class="fa-solid fa-trash"></i></a>
-                        <a href="/Sistema2/administrador/dashboardAdmin.php?id=<?= $boleto['idBoleto'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
+                        <a href="/administrador/dashboardAdmin.php?id=<?= $boleto['idBoleto'] ?>"><i class="fa-solid fa-pen-to-square"></i></a>
                     </div>
                     <?php
                        $numVentas =  $boleto['cantidadBoletosDisponibles'];
@@ -232,9 +232,9 @@
                         $resultGetEstado = mysqli_query($conn,$queryGetCompra);
                         $estadoArrival = mysqli_fetch_array($resultGetEstado); 
                     ?>
-                        <a href="/Sistema2/administrador/dashboardAdmin.php" id="cancelarVer">Cancelar</a>
+                        <a href="/administrador/dashboardAdmin.php" id="cancelarVer">Cancelar</a>
                     <?php if($estadoArrival['estadoLlegada'] == "SinLlegar"): ?>
-                        <a href="/Sistema2/administrador/actualizarEstadoCompra.php?idCompra=<?= $_GET['idCompra'] ?>" id="ingresadoCliente">El cliente ha ingresado</a>
+                        <a href="/administrador/actualizarEstadoCompra.php?idCompra=<?= $_GET['idCompra'] ?>" id="ingresadoCliente">El cliente ha ingresado</a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -246,7 +246,7 @@
         <div id="buscar-section">
             <h1>Control de ingreso</h1>
             <div id="container-buscador"><i class="fa-solid fa-qrcode"></i><input type="search" name="buscarCompra" id="buscadorCodigo" placeholder="Buscar codigo de boleto"></div>
-            <a href="/Sistema2/administrador/dashboardAdmin.php" id="updateEstadoControl"><i class="fa-solid fa-rotate"></i></a>
+            <a href="/administrador/dashboardAdmin.php" id="updateEstadoControl"><i class="fa-solid fa-rotate"></i></a>
         </div>
         <?php
             $queryGetCompras = "SELECT * FROM compra";
@@ -287,7 +287,7 @@
                                 <?php else: ?>
                                     <td><div id="estadoDiv" class="llego"></div></td>
                                 <?php endif; ?>
-                                <td><a href="/Sistema2/administrador/dashboardAdmin.php?idCompra=<?= $compra['idCompra'] ?>"><i class="fa-solid fa-eye"></i></a></td>
+                                <td><a href="/administrador/dashboardAdmin.php?idCompra=<?= $compra['idCompra'] ?>"><i class="fa-solid fa-eye"></i></a></td>
                             </tr>
                         <?php endwhile; ?>
                     </tbody>
@@ -312,7 +312,7 @@
         <div id="buscar-section-trans">
             <h1>Transacciones</h1>
             <div id="container-buscador-trans"><i class="fa-solid fa-qrcode"></i><input type="search" name="buscarCompra" id="buscadorCodigoTrans" placeholder="Buscar email"></div>
-            <a href="/Sistema2/administrador/dashboardAdmin.php" id="updateEstadoTrans"><i class="fa-solid fa-rotate"></i></a>
+            <a href="/administrador/dashboardAdmin.php" id="updateEstadoTrans"><i class="fa-solid fa-rotate"></i></a>
         </div>
         <?php
             $queryGetCompras = "SELECT * FROM compra";

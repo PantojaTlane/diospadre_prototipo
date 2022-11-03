@@ -24,11 +24,11 @@ if(isset($_POST['nombre']) && isset($_POST['costo']) && isset($_POST['cantidad']
 
     if($result){
         $_SESSION['edited'] = "Boleto editado correctamente";
-        header("Location: /Sistema2/administrador/dashboardAdmin.php");
+        header("Location: /administrador/dashboardAdmin.php");
     }
 
 }else{
-    header("Location: /Sistema2/administrador/dashboardAdmin.php");
+    header("Location: /administrador/dashboardAdmin.php");
 }
 
 ?>

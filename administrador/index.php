@@ -5,7 +5,7 @@
     session_start();//Iniciamos sesion
 
     if(isset($_SESSION["user_id"])){
-        header("Location: /Sistema2/administrador/dashboardAdmin.php");
+        header("Location: /administrador/dashboardAdmin.php");
     }
 
     $message = "";
@@ -22,7 +22,7 @@
             $getUser = mysqli_fetch_array($resultQueryVerificar);
             if($contrasenia === $getUser['contrasenia']){//Si la contraseña es correcta y existe usuario
                 $_SESSION["user_id"] = $getUser['idAdministrador'];
-                header("Location: /Sistema2/administrador/dashboardAdmin.php");
+                header("Location: /administrador/dashboardAdmin.php");
             }else{//Existe usuario pero la contraseña es incorrecta
                 $message = "Contraseña incorrecta";
             }   
