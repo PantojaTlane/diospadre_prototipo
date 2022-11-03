@@ -81,15 +81,19 @@ if(!$resultAgregarCompra){//Si no se llevo a cabo la insercion del registro de c
         $getBol = mysqli_fetch_array($resultquerygetBol);
         $nombreReal = $getBol['nombre'];
 
-        $trHTML .= "<tr>
+        /*$trHTML .= "<tr>
                         <td style=\"padding:0.3rem;color:#4e4e4e\">$nombreReal</td>
                         <td style=\"padding:0.3rem;\">$cantidadB</td>
+                    </tr>";*/
+        $trHTML .= "<tr>
+                        <td style=\"text-align: left; padding: 4px\">$nombreReal</td>
+                        <td style=\"text-align: left; padding: 4px\">$cantidadB</td>
                     </tr>";
     }
 
     $subject = "Codigo de entrada al parque";
 
-    $body = "
+    /*$body = "
     <div id=\"entrada\" style=\"
                                 background-color: #fff;
                                 box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -111,6 +115,124 @@ if(!$resultAgregarCompra){//Si no se llevo a cabo la insercion del registro de c
                 </tbody>
         </table>
     </div>
+    ";*/
+
+    $body = "
+    <header
+    style=\"
+      background-color: #0852a4;
+      padding: 1rem;
+      color: white;
+      font-weight: 900;
+      font-size: 0.7rem;
+    \"
+  >
+    Balneario Dios Padre
+  </header>
+  <h1 style=\"text-align: center; font-size: 0.7rem\">Gracias por su compra</h1>
+  <h2
+    style=\"
+      text-align: center;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      color: #ff6a00;
+    \"
+  >
+    Proporciona al personal el siguiente código
+  </h2>
+  <div
+    id=\"codigo\"
+    style=\"
+      width: 180px;
+      height: 30px;
+      margin: auto;
+      padding: 0.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      letter-spacing: 0.1rem;
+      background-color: #ff6a00;
+      font-size: 0.7rem;
+      border-radius: 0.3rem;
+      color: white;
+    \"
+  >
+    ".$tokenCompra."
+  </div>
+  <div
+    class=\"tabla-container\"
+    style=\"width: 100%; margin-top: 1rem; margin-bottom: 1rem\"
+  >
+    <table style=\"width: 90%; font-size: 0.7rem; margin: auto\">
+      <thead style=\"background-color: #c1c1c1; color: white\">
+        <tr id=\"filauno\">
+          <td style=\"text-align: left; padding: 4px\">TIPO DE BOLETO</td>
+          <td style=\"text-align: left; padding: 4px\">CANTIDAD</td>
+        </tr>
+      </thead>
+      <tbody>
+        ".$trHTML."
+      </tbody>
+    </table>
+  </div>
+  <h1 style=\"text-align: center; font-size: 0.7rem\">Fecha de llegada</h1>
+  <p style=\"font-size: 0.7rem; text-align: center\">".$fechaReservada."</p>
+  <div id=\"como\" style=\"background-color: #06b1ec; padding: 0.5rem\">
+    <h3 style=\"color: white; font-size: 0.7rem; text-align: center\">
+      Como llegar al lugar
+    </h3>
+    <a
+      href=\"https://goo.gl/maps/TqFKdnqCBDwvHU2AA\"
+      style=\"
+        display: block;
+        width: 70px;
+        margin: auto;
+        text-decoration: none;
+        background-color: #8ed2ed;
+        color: white;
+        border: none;
+        padding: 0.5rem;
+        text-align: center;
+        border-radius: 3px;
+        font-weight: 600;
+        font-size: 0.6rem;
+      \"
+      >Ubicación</a
+    >
+  </div>
+  <div
+    id=\"redes\"
+    style=\"
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+    \"
+  >
+    <a
+      href=\"https://m.facebook.com/padiospadre/\"
+      style=\"text-decoration: none; margin-right: 0.5rem; font-size: 0.8rem\"
+      >Facebook</a
+    >
+    <a
+      href=\"http://www.padiospadre.com.mx/\"
+      style=\"text-decoration: none; margin-right: 0.5rem; font-size: 0.8rem\"
+      >Sitio</a
+    >
+    <a
+      href=\"https://instagram.com/balneariodiospadreoficial?igshid=YmMyMTA2M2Y=\"
+      style=\"text-decoration: none; margin-right: 0.5rem; font-size: 0.8rem\"
+      >Instagram</a
+    >
+  </div>
+  <h1 style=\"text-align: center; font-size: 0.7rem\">
+    Visítanos para más información y diversión.
+  </h1>
+  <p style=\"font-size: 0.7rem; text-align: center\">
+    ©2022 DAY. | Derechos reservados
+  </p>
     ";
 
     sendMail($subject,$body,$emailUser,$nombreCliente,true);
