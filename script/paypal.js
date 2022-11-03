@@ -49,7 +49,7 @@ precioPagar.textContent = '$' + valor + 'MXN';//Esto solo lo colocamos para info
 
 const dataBoletos = JSON.stringify(idBoletosAdquiridos);
             
-fetch("http://localhost/Sistema2/verificarDisponibilidad.php", {
+fetch("https://diospadre.herokuapp.com/verificarDisponibilidad.php", {
     method: "POST",
     body: dataBoletos,
 })
@@ -113,7 +113,7 @@ fetch("http://localhost/Sistema2/verificarDisponibilidad.php", {
         
                     const compraData = JSON.stringify(datosCompra);
                     
-                    fetch("http://localhost/Sistema2/procesarPagoPaypal.php", {
+                    fetch("https://diospadre.herokuapp.com/procesarPagoPaypal.php", {
                         method: "POST",
                         body: compraData,
                     })
