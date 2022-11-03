@@ -10,7 +10,7 @@ if(!isset($_SESSION['login'])){//Esto es para llamar una sola vez el archivo aut
         $_SESSION['login'] = $google_account_info['id'];
         $_SESSION['info_account'] = $google_account_info;
     }else{
-        header('Location: /Sistema2/index.php');
+        header('Location: /index.php');
     }
 }
 

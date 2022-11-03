@@ -4,5 +4,5 @@ session_start();
 session_unset();
 session_destroy();
 //$google_oauth->userinfo->session_register_shutdown();
-header("Location: /Sistema2/index.php");
+header("Location: /index.php");
 ?>
