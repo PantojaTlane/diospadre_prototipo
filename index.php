@@ -13,7 +13,7 @@ if(isset($_SESSION['login'])){
         $hd = "";
     }
     //Redirigir a la pestaña de bienvenida
-    $location = "Location: /Sistema2/bienvenida.php?code=".$_SESSION['code']."&scope=".$_SESSION['scope']."&authuser=".$_SESSION['authuser'].$hd."&prompt=".$_SESSION['prompt'];
+    $location = "Location: /bienvenida.php?code=".$_SESSION['code']."&scope=".$_SESSION['scope']."&authuser=".$_SESSION['authuser'].$hd."&prompt=".$_SESSION['prompt'];
     header($location);
 }
 
