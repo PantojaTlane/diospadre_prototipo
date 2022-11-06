@@ -25,7 +25,7 @@ recuperar.addEventListener("click",e=>{
     e.preventDefault();
     e.stopPropagation();
 
-    fetch("http://localhost/Sistema2/administrador/recuperar.php", {
+    fetch("https://diospadre.herokuapp.com/administrador/recuperar.php", {
         method: "POST",
         body: {
             email: 'daypayutick@gmail.com'
